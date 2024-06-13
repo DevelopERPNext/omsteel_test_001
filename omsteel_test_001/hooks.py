@@ -9,6 +9,9 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
+
+# app_include_css = "/assets/omsteel_test_001/css/font_style.css"
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/omsteel_test_001/css/omsteel_test_001.css"
 # app_include_js = "/assets/omsteel_test_001/js/omsteel_test_001.js"
@@ -227,3 +230,26 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+# ================  Adding ========================
+
+app_include_css = "/assets/omsteel_test_001/css/font_style.css"
+
+doc_events = {
+    "BOM": {
+        "validate": [
+            "omsteel_test_001.omsteel_test_001.production_items_table.move_data_from_production_items_table_to_scrap_items",
+        ],
+    },
+    "Stock Entry": {
+        "validate": [
+            # "omsteel_test_001.omsteel_test_001.production_items_table.update_stock_entry_items",
+        ]
+    }
+}
+
+doctype_js = {
+    "Stock Entry": "public/js/bom_omsteel.js",
+}
+
+fixtures = [{"dt": "Custom Field", "filters": [["module", "=", "Omsteel Test 001"]]}]
