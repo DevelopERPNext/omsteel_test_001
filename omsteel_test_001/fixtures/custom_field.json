@@ -1,0 +1,54 @@
+[
+ {
+  "doctype": "Custom Field",
+  "dt": "BOM",
+  "module": "Omsteel Test 001",
+  "name": "data_check_production_items_a_001",
+  "fieldname": "data_check_production_items_a_001",
+  "fieldtype": "Check",
+  "label": "Data Check Production Items",
+  "insert_after": "project",
+  "default": 0,
+  "allow_on_submit": 0,
+  "read_only": 0,
+  "sync_on_migrate": 1
+ },
+ {
+   "doctype": "Custom Field",
+   "dt": "BOM",
+   "module": "Omsteel Test 001",
+   "depends_on": "eval:doc.data_check_production_items_a_001 == 1",
+   "name": "c_section_a_001",
+   "fieldname": "c_section_a_001",
+   "fieldtype": "Section Break",
+   "label": "Production Items",
+   "insert_after": "image",
+   "sync_on_migrate": 1
+  },
+  {
+   "doctype": "Custom Field",
+   "dt": "BOM",
+   "module": "Omsteel Test 001",
+   "name": "production_items_a_001",
+   "fieldname": "production_items_a_001",
+   "fieldtype": "Table",
+   "options": "BOM Production Items",
+   "label": "Production Items",
+   "insert_after": "c_section_a_001",
+   "sync_on_migrate": 1
+  },
+  {
+  "doctype": "Custom Field",
+  "dt": "Stock Entry",
+  "module": "Omsteel Test 001",
+  "name": "bom_check",
+  "fieldname": "bom_check",
+  "fieldtype": "Check",
+  "label": "BOM Check",
+  "insert_after": "apply_putaway_rule",
+  "default": 0,
+  "allow_on_submit": 0,
+  "read_only": 1,
+  "sync_on_migrate": 1
+  }
+]
